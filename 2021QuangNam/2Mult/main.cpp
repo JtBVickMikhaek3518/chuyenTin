@@ -12,7 +12,7 @@ int main() {
 
     while (k--) {
         cin >> n >> x;
-        cout << x / n << '\n';
+        cout << x / n;
     }
 
     return 0;
