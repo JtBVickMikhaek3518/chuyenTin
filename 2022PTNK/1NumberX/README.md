@@ -17,4 +17,10 @@ Gọi:
 mà $$t=bh+b$$\
 -> $$x-t=-a-b$$\
 -> $$x=t-a-b$$\
+Mà ta đang tìm $$x$$ nhỏ nhất -> $$t$$ nhỏ nhất\
+Mà $$t$$ phải chia hết a và b\
+-> $$t=lcm(a,b)$$\
+-> $$x=lcm(a,b)-a-b$$
 
+**Trường hợp đặc biệt:** $$a\ge b$$\
+- $$a=k\times b\ (k > 1)$$
