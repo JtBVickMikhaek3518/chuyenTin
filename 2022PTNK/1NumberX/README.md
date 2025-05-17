@@ -8,9 +8,9 @@ Tìm công thức của $$x$$ thay vì duyệt, ta có:\
 $$a+x\ \vdots\ b$$ -> $$a+x=b\times h$$\
 $$b+x\ \vdots\ a$$ -> $$b+x=a\times q$$\
 -> $$a+x+a\times q=b+x+b\times h$$\
--> $$a(q+1)=b(h+1)$$\
+-> $$a(q+1)=b(h+1)$$
 
-Gọi:\
+Gọi:
 - $$t=a(q+1)=b(h+1)$$
 - $$a+x=bh$$
 -> $$x=bh-a$$\
