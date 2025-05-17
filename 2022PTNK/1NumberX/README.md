@@ -9,7 +9,7 @@ Trong thuật toán chuẩn sẽ chứng minh được x, từ đó thấy sẽ 
 
 ## Thuật toán tối ưu
 Tìm công thức của $$x$$ thay vì duyệt, ta có:\
-$$a+x\ \vdots\ b$$ -> $$a+x=b\times h$$
+$$a+x\ \vdots\ b$$ -> $$a+x=b\times h$$\
 $$b+x\ \vdots\ a$$ -> $$b+x=a\times q$$
 -> $$a+x+a\times q=b+x+b\times h$$
 -> $$a(q+1)=b(h+1)$$
