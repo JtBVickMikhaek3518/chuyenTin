@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MOD = 1e9 + 7;
 long long powNoFlow(int a, int b) {
     long long s = 1;
 
     for (int i = 1; i <= b; i++) {
         s *= a;
-        s %= MOD;
+        s %= INT_MAX;
     }
 
     return s;
