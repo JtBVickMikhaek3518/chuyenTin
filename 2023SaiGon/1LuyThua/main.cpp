@@ -6,7 +6,7 @@ long long powNoFlow(int a, int b) {
 
     for (int i = 1; i <= b; i++) {
         s *= a;
-        s %= INT_MAX;
+        s %= LLONG_MAX;
     }
 
     return s;
