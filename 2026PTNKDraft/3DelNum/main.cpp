@@ -1,71 +1,76 @@
-// CHƯA XONG
-
 #include <bits/stdc++.h>
 using namespace std;
 
-string ketQua(string sn, string sm) {
-    string result;
+string sn, sm, res = "";
+int n, m, k;
 
-    while (sm.length() < sn.length())
-        sm = '0' + sm;
-    
+void findMax() {
+    int start = 0, end = n - m, csm = 57;
+
+    while (start < end && m != 0) {
+        for (int i = start; i <= end; i++)
+            if (sn[i] == csm) {
+                sm = sm + sn[i];
+                start = i + 1;
+                m--;
+                end = n - m;
+                csm = 58;
+                break;
+            }
+        csm--;
+    }
+
+    sm = sm + sn.substr(start, m);
+}
+
+void bigSub() {
     int muon = 0, so, so1, so2;
-    for (int i = sn.length(); i >= 0; i--) {
-        so1 = sn[i] - '0';
-        so2 = sm[i] - '0';
+
+    while (sm.size() < sn.size())
+        sm = "0" + sm;
+
+    for (int i = sn.size() - 1; i >= 0; i--) {
+        so1 = sn[i] - 48;
+        so2 = sm[i] - 48;
 
         if (so1 >= so2 + muon) {
             so = so1 - (so2 + muon);
             muon = 0;
         }
 
-        else if (so1 < so2 + muon) {
-            so = (so1 + 10) - (so2 + muon);
+        else {
+            so = so1 - (so2 + muon) + 10;
             muon = 1;
         }
 
-        result = char(so + '0') + result;
+        res = char(so + 48) + res;
     }
 
-    while (sm[0] == '0')
-        sm.erase(sm.begin());
-
-    return result;
+    while (res[0] == '0')
+        res.erase(0, 1);
 }
 
 int main() {
 
+    // Tăng tốc nhập xuất khi testcase lớn
+    ios_base::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+
     freopen("input.inp", "r", stdin);
     freopen("output.out", "w", stdout);
-
-    string sn, sm;
-    int n, m, k;
-    int maxDigit = 57;
 
     cin >> sn;
     cin >> k;
 
-    n = sn.length();
-    m = n - k;
+    if (k == 0) cout << sn;
+    else {
+        n = sn.size();
+        m = n - k;
 
-    int start = 0;
-    int end = n - m;
-
-    while (start < end && m != 0)
-        for (int i = start; i < end; i++)
-            if (sn[i] == maxDigit) {
-                sm += sn[i];
-                start = i + 1;
-                m--;
-                end = n - m;
-                maxDigit = 58;
-            }
-            maxDigit--;
-
-    for (int i = start; i < sn.length(); i++)
-            sm += sn[i];
-
-    cout << ketQua(sn, sm);
+        findMax();
+        bigSub();
+        cout << res;
+    }
 
     return 0;
 }
